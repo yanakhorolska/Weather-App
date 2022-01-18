@@ -1,10 +1,11 @@
 ﻿<?php 
+include 'config.php';
 error_reporting(E_ERROR | E_PARSE);
 $weather = '';
 $error = '';
 if(isset($_GET["city"])){
 
-    $urlContent = file_get_contents('https://api.openweathermap.org/data/2.5/weather?q='.$_GET['city'].'&units=metric&appid=0c0610d7593923374fcbd2bdb3babb71');
+    $urlContent = file_get_contents('https://api.openweathermap.org/data/2.5/weather?q='.$_GET['city'].'&units=metric&appid='.$api_key);
     $forcastArray = json_decode($urlContent, true);
     
 
